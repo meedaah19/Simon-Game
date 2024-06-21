@@ -8,15 +8,7 @@ var started = false;
 
 var level = 0;
 
-$('body').click(function(){
-    if (!started) {
-        $("#level-title").text("Level " + level);
-        nextSequence();
-        started = true;
-    }
-});
-
-$(document).keypress(function() {
+$(document).on('click', function() {
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
@@ -55,8 +47,7 @@ function checkAnswer(currentLevel) {
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-      $("#level-title").text("Game Over, Press Any Key to Restart");
-      startOver();
+      
       }
 }
 
